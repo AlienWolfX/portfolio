@@ -7,19 +7,60 @@ import {
   SimpleGrid,
   Button,
   List,
+  ListIcon,
   ListItem,
   useColorModeValue
 } from '@chakra-ui/react'
 import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
+import {
+  SectionTitle,
+  SectionYear,
+  SectionDesc,
+  SectionWork,
+  SectionContent
+} from '../components/background'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import { GridItem } from '../components/grid-item'
-import { IoLogoTwitter, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
-import thumbYouTube from '../public/images/links/youtube.png'
-import thumbInkdrop from '../public/images/works/inkdrop_eyecatch.png'
 import Image from 'next/image'
+import { certifications, workInfo } from '../components/details'
+import {
+  FaSquareXTwitter,
+  FaLinkedin,
+  FaFacebookF,
+  FaSquareInstagram
+} from 'react-icons/fa6'
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaPython,
+  FaDocker,
+  FaGithub,
+  FaGit,
+  FaFigma,
+  FaJava,
+  FaDatabase
+} from 'react-icons/fa'
+import {
+  SiNextdotjs,
+  SiFlask,
+  SiGraphql,
+  SiMysql,
+  SiPostgresql,
+  SiSqlite,
+  SiNetlify,
+  SiVercel,
+  SiHeroku,
+  SiVisualstudiocode,
+  SiPostman,
+  SiCanva,
+  SiVbDotNet
+} from 'react-icons/si'
+import Head from 'next/head'
 
 const Home = () => (
   <Layout>
@@ -32,16 +73,35 @@ const Home = () => (
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
         css={{ backdropFilter: 'blur(10px)' }}
       >
-        Hello, I&apos;m an indie app developer based in Japan!
+        Greetings Fella!
       </Box>
 
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
-            Takuya Matsuyama
+            Allen Gabrielle Cruiz
           </Heading>
-          <p>Digital Craftsman ( Artist / Developer / Designer )</p>
+          <p>Security Researcher and Full Stack Web Developer</p>
+          <br />
+          <Box ml={2} display="flex" alignItems="center">
+            <Link href="https://twitter.com/yourprofile" isExternal>
+              <FaSquareXTwitter size="1.5em" />
+            </Link>
+            <Link href="https://linkedin.com/in/yourprofile" isExternal ml={2}>
+              <FaLinkedin size="1.5em" />
+            </Link>
+            <Link href="https://github.com/yourprofile" isExternal ml={2}>
+              <FaGithub size="1.5em" />
+            </Link>
+            <Link href="" isExternal ml={2}>
+              <FaFacebookF size="1.5em" />
+            </Link>
+            <Link href="" isExternal ml={2}>
+              <FaSquareInstagram size="1.5em" />
+            </Link>
+          </Box>
         </Box>
+
         <Box
           flexShrink={0}
           mt={{ base: 4, md: 0 }}
@@ -59,7 +119,7 @@ const Home = () => (
             overflow="hidden"
           >
             <Image
-              src="/images/takuya.jpg"
+              src="/images/cruiz.jpg"
               alt="Profile image"
               width="100"
               height="100"
@@ -68,36 +128,24 @@ const Home = () => (
         </Box>
       </Box>
 
+      <br />
+
       <Section delay={0.1}>
         <Heading as="h3" variant="section-title">
-          Work
+          About me
         </Heading>
         <Paragraph>
-          Takuya is a freelance and a full-stack developer based in Osaka with a
-          passion for building digital services/stuff he wants. He has a knack
-          for all things launching products, from planning and designing all the
-          way to solving real-life problems with code. When not online, he loves
-          hanging out with his camera. Currently, he is living off of his own
-          product called{' '}
-          <Link as={NextLink} href="/works/inkdrop" passHref scroll={false}>
-            Inkdrop
-          </Link>
-          . He publishes content for marketing his products and his YouTube
-          channel called &quot;
-          <Link
-            as={NextLink}
-            href="https://www.youtube.com/devaslife"
-            passHref
-            target="_blank"
-          >
-            Dev as Life
-          </Link>
-          &quot; has more than 100k subscribers.
+          I am currently a college junior at Caraga State University pursuing a
+          Bachelor of Science in Information Technology. As an aspiring amateur
+          Embedded Developer and Security Researcher, I am deeply passionate
+          about my work. My primary focus is on Wi-Fi routers and Optical
+          Router/Modem systems, where I specialize in creating customized
+          firmware using OpenWrt.
         </Paragraph>
         <Box align="center" my={4}>
           <Button
             as={NextLink}
-            href="/works"
+            href="/projects"
             scroll={false}
             rightIcon={<ChevronRightIcon />}
             colorScheme="teal"
@@ -109,132 +157,209 @@ const Home = () => (
 
       <Section delay={0.2}>
         <Heading as="h3" variant="section-title">
-          Bio
+          Education
         </Heading>
         <BioSection>
-          <BioYear>1984</BioYear>
-          Born in Osaka (大阪), Japan.
+          <BioYear>2019-2021</BioYear>
+          De La Salle John Bosco College
         </BioSection>
         <BioSection>
-          <BioYear>2010</BioYear>
-          Completed the Master&apos;s Program in the Graduate School of
-          Information Science at Nara Institute of Science and Technology
-          (奈良先端科学技術大学院大学情報科学研究科修士課程)
-        </BioSection>
-        <BioSection>
-          <BioYear>2010</BioYear>
-          Worked at Yahoo! Japan (ヤフー株式会社入社)
-        </BioSection>
-        <BioSection>
-          <BioYear>2012 to present</BioYear>
-          Working as a freelancer
+          <BioYear>2021-Present</BioYear>
+          Caraga State University (Information Technology)
         </BioSection>
       </Section>
 
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
-          I ♥
+          Work
         </Heading>
-        <Paragraph>
-          Art, Music,{' '}
-          <Link href="https://illust.odoruinu.net/" target="_blank">
-            Drawing
-          </Link>
-          , Playing Drums,{' '}
-          <Link href="https://500px.com/p/craftzdog" target="_blank">
-            Photography
-          </Link>
-          , Leica, Machine Learning
-        </Paragraph>
+          <SectionWork>
+            <Box>
+              {workInfo.map((work, index) => (
+                <Box key={index}>
+                  <SectionContent>
+                  <SectionYear>{work.year}</SectionYear>
+                    <SectionTitle>{work.title}</SectionTitle>
+                    <SectionDesc>{work.desc}</SectionDesc>
+                    <hr />
+                  </SectionContent>
+                </Box>
+              ))}
+            </Box>
+          </SectionWork>
       </Section>
 
-      <Section delay={0.3}>
+      <Section delay={0.4}>
         <Heading as="h3" variant="section-title">
-          On the web
+          Certifications
         </Heading>
-        <List>
-          <ListItem>
-            <Link href="https://github.com/craftzdog" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoGithub />}
-              >
-                @craftzdog
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://twitter.com/inkdrop_app" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoTwitter />}
-              >
-                @inkdrop_app (English)
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://twitter.com/craftzdog" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoTwitter />}
-              >
-                @craftzdog (日本語)
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://instagram.com/craftzdog" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoInstagram />}
-              >
-                @craftzdog
-              </Button>
-            </Link>
-          </ListItem>
-        </List>
-
-        <SimpleGrid columns={[1, 2, 2]} gap={6}>
-          <GridItem
-            href="https://www.youtube.com/devaslife"
-            title="Dev as Life"
-            thumbnail={thumbYouTube}
-          >
-            My YouTube channel (&gt;200k subs)
-          </GridItem>
-          <GridItem
-            href="https://www.inkdrop.app/"
-            title="Inkdrop"
-            thumbnail={thumbInkdrop}
-          >
-            A Markdown note-taking app
-          </GridItem>
+        <SimpleGrid columns={2} gap={6}>
+          {certifications.map((cert, index) => (
+            <Box key={index}>
+              <Paragraph>{cert.text}</Paragraph>
+              <Image src={cert.src} width={300} height={300} />
+            </Box>
+          ))}
         </SimpleGrid>
+      </Section>
 
+      <Section delay={0.5}>
         <Heading as="h3" variant="section-title">
-          Newsletter
+          Tech Stacks
         </Heading>
-        <p>
-          Join me on a behind-the-scenes coding journey. Weekly updates on
-          projects, tutorials, and videos
-        </p>
-
-        <Box align="center" my={4}>
-          <Button
-            as={NextLink}
-            href="https://www.devas.life/"
-            scroll={false}
-            leftIcon={<EmailIcon />}
-            colorScheme="teal"
-          >
-            Sign up my newsletter here
-          </Button>
-        </Box>
+        <SimpleGrid columns={3} spacing={10}>
+          <Box>
+            <Paragraph>Frontend</Paragraph>
+            <List>
+              <ListItem>
+                <ListIcon as={FaHtml5} />
+                HTML
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCss3Alt} />
+                CSS
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaJs} />
+                JavaScript
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaReact} />
+                React
+              </ListItem>
+              <ListItem>
+                <ListIcon as={SiNextdotjs} />
+                Next.js
+              </ListItem>
+            </List>
+          </Box>
+          <Box>
+            <Paragraph>Backend</Paragraph>
+            <List>
+              <ListItem>
+                <ListIcon as={FaNodeJs} />
+                Node.js
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaPython} />
+                Python
+              </ListItem>
+              <ListItem>
+                <ListIcon as={SiFlask} />
+                Flask
+              </ListItem>
+              <ListItem>
+                <ListIcon as={SiGraphql} />
+                GraphQL
+              </ListItem>
+            </List>
+          </Box>
+          <Box>
+            <Paragraph>Database</Paragraph>
+            <List>
+              <ListItem>
+                <ListIcon as={SiMysql} />
+                MySQL
+              </ListItem>
+              <ListItem>
+                <ListIcon as={SiPostgresql} />
+                PostgreSQL
+              </ListItem>
+              <ListItem>
+                <ListIcon as={SiSqlite} />
+                SQLite
+              </ListItem>
+            </List>
+          </Box>
+          <Box>
+            <Paragraph>DevOps</Paragraph>
+            <List>
+              <ListItem>
+                <ListIcon as={FaDocker} />
+                Docker
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaGithub} />
+                GitHub Actions
+              </ListItem>
+            </List>
+          </Box>
+          <Box>
+            <Paragraph>Cloud</Paragraph>
+            <List>
+              <ListItem>
+                <ListIcon as={SiNetlify} />
+                Netlify
+              </ListItem>
+              <ListItem>
+                <ListIcon as={SiVercel} />
+                Vercel
+              </ListItem>
+              <ListItem>
+                <ListIcon as={SiHeroku} />
+                Heroku
+              </ListItem>
+            </List>
+          </Box>
+          <Box>
+            <Paragraph>Tools</Paragraph>
+            <List>
+              <ListItem>
+                <ListIcon as={SiVisualstudiocode} />
+                VS Code
+              </ListItem>
+              <ListItem>
+                <ListIcon as={SiPostman} />
+                Postman
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaGit} />
+                Git
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaGithub} />
+                GitHub
+              </ListItem>
+            </List>
+          </Box>
+          <Box>
+            <Paragraph>Design</Paragraph>
+            <List>
+              <ListItem>
+                <ListIcon as={FaFigma} />
+                Figma
+              </ListItem>
+              <ListItem>
+                <ListIcon as={SiCanva} />
+                Canva
+              </ListItem>
+            </List>
+          </Box>
+          <Box>
+            <Paragraph>Programming</Paragraph>
+            <List>
+              <ListItem>
+                <ListIcon as={FaDatabase} />C
+              </ListItem>
+              <ListItem>
+                <ListIcon as={SiVbDotNet} />
+                VB.net
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaJava} />
+                Java
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaPython} />
+                Python
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaJs} />
+                JavaScript
+              </ListItem>
+            </List>
+          </Box>
+        </SimpleGrid>
       </Section>
     </Container>
   </Layout>
