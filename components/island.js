@@ -2,17 +2,17 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTFModel } from '../lib/model'
-import { DogSpinner, DogContainer } from './voxel-dog-loader'
+import { IslandContainer, IslandSpinner } from './island-loader'
 
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4))
 }
 
-const VoxelDog = () => {
+const Island = () => {
   const refContainer = useRef()
   const [loading, setLoading] = useState(true)
   const refRenderer = useRef()
-  const urlDogGLB = (process.env.NODE_ENV === 'production' ? 'https://craftzdog.global.ssl.fastly.net/homepage' : '') + '/dog.glb'
+  const urlDogGLB = (process.env.NODE_ENV === 'production' ? 'https://craftzdog.global.ssl.fastly.net/homepage' : '') + '/3D/stronghold.glb'
 
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer
@@ -52,7 +52,7 @@ const VoxelDog = () => {
 
       // 640 -> 240
       // 8   -> 6
-      const scale = scH * 0.005 + 4.8
+      const scale = scH * 0.009 + 4.9
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
@@ -64,8 +64,24 @@ const VoxelDog = () => {
       camera.position.copy(initialCameraPosition)
       camera.lookAt(target)
 
-      const ambientLight = new THREE.AmbientLight(0xcccccc, Math.PI)
+      const ambientLight = new THREE.AmbientLight(0xcccccc, 1)
       scene.add(ambientLight)
+
+      const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1)
+      directionalLight1.position.set(5, 10, 7.5)
+      scene.add(directionalLight1)
+
+      const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.5)
+      directionalLight2.position.set(-5, -10, -7.5)
+      scene.add(directionalLight2)
+
+      const pointLight1 = new THREE.PointLight(0xffffff, 1, 100)
+      pointLight1.position.set(10, 10, 10)
+      scene.add(pointLight1)
+
+      const pointLight2 = new THREE.PointLight(0xffffff, 0.5, 100)
+      pointLight2.position.set(-10, -10, -10)
+      scene.add(pointLight2)
 
       const controls = new OrbitControls(camera, renderer.domElement)
       controls.autoRotate = true
@@ -119,8 +135,8 @@ const VoxelDog = () => {
   }, [handleWindowResize])
 
   return (
-    <DogContainer ref={refContainer}>{loading && <DogSpinner />}</DogContainer>
+    <IslandContainer ref={refContainer}>{loading && <IslandSpinner />}</IslandContainer>
   )
 }
 
-export default VoxelDog
+export default Island

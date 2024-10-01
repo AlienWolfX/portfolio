@@ -1,4 +1,3 @@
-// details.js
 export const educationInfo = [
     {
         school: 'De La Salle John Bosco College',
@@ -17,15 +16,30 @@ export const certifications = [
     }
 ]
 
+export const seminars = [
+    {
+        text: 'Tools for Innovation and Entrepreneurs',
+        src: '/images/certs/sem_innovation.png'
+    },
+    {
+        text: 'Deep Dive on the Influence of User Need',
+        src: '/images/certs/sem_prototyping.png'
+    },
+    {
+        text: 'Digital Branding and Storytelling',
+        src: '/images/certs/sem_branding.png'
+    }
+]
+
 export const workInfo = [
     {
         year: '2023',
-        title: 'Infinity',
-        desc: 'Worked as a Network Equipment Installer'
+        title: 'Equipment Installer',
+        desc: 'Installed rate limiter and load balancer'
     },
     {
         year: '2024',
-        title: 'Hydra',
-        desc: 'Maintener and Tester'
-    },
+        title: 'Embedded Developer',
+        desc: 'Developed an embedded system for an organization',
+    }
 ]

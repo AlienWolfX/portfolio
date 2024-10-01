@@ -17,14 +17,13 @@ import {
   SectionTitle,
   SectionYear,
   SectionDesc,
-  SectionWork,
   SectionContent
 } from '../components/background'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Image from 'next/image'
-import { certifications, workInfo } from '../components/details'
+import { certifications, workInfo, seminars } from '../components/details'
 import {
   FaSquareXTwitter,
   FaLinkedin,
@@ -135,12 +134,10 @@ const Home = () => (
           About me
         </Heading>
         <Paragraph>
-          I am currently a college junior at Caraga State University pursuing a
-          Bachelor of Science in Information Technology. As an aspiring amateur
-          Embedded Developer and Security Researcher, I am deeply passionate
-          about my work. My primary focus is on Wi-Fi routers and Optical
-          Router/Modem systems, where I specialize in creating customized
-          firmware using OpenWrt.
+        I am currently a senior at Caraga State University, pursuing a Bachelor of Science in Information Technology. 
+        As an aspiring amateur Embedded Developer and Security Researcher, I am deeply passionate about my work. 
+        My primary focus is on Wi-Fi routers and Optical Router/Modem systems, where 
+        I specialize in creating customized firmware using OpenWrt as well as finding vulnerabilities.
         </Paragraph>
         <Box align="center" my={4}>
           <Button
@@ -173,20 +170,18 @@ const Home = () => (
         <Heading as="h3" variant="section-title">
           Work
         </Heading>
-          <SectionWork>
+          <BioSection>
             <Box>
               {workInfo.map((work, index) => (
                 <Box key={index}>
-                  <SectionContent>
-                  <SectionYear>{work.year}</SectionYear>
-                    <SectionTitle>{work.title}</SectionTitle>
-                    <SectionDesc>{work.desc}</SectionDesc>
-                    <hr />
-                  </SectionContent>
+                  <BioYear>{work.year}</BioYear>
+                    {work.title}
+                    <br />
+                    {work.desc}
                 </Box>
               ))}
             </Box>
-          </SectionWork>
+          </BioSection>
       </Section>
 
       <Section delay={0.4}>
@@ -202,8 +197,22 @@ const Home = () => (
           ))}
         </SimpleGrid>
       </Section>
-
+  
       <Section delay={0.5}>
+        <Heading as="h3" variant="section-title">
+          Seminars
+        </Heading>
+        <SimpleGrid columns={2} gap={6}>
+          {seminars.map((sem, index) => (
+            <Box key={index}>
+              <p>{sem.text}</p>
+              <Image src={sem.src} width={300} height={300} />
+            </Box>
+          ))}
+        </SimpleGrid>
+      </Section>
+
+      <Section delay={0.6}>
         <Heading as="h3" variant="section-title">
           Tech Stacks
         </Heading>

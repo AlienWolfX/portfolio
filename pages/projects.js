@@ -12,7 +12,7 @@ const Projects = () => (
         Projects
       </Heading>
 
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+      <SimpleGrid columns={3} gap={4}>
         {project.map((proj, index) => (
           <Section key={index} delay={index * 0.1}>
             <WorkGridItem
