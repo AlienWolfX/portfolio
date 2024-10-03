@@ -346,10 +346,6 @@ const Home = () => (
                 <ListIcon as={FaDatabase} />C
               </ListItem>
               <ListItem>
-                <ListIcon as={SiVbDotNet} />
-                VB.net
-              </ListItem>
-              <ListItem>
                 <ListIcon as={FaJava} />
                 Java
               </ListItem>

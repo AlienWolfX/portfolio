@@ -1,7 +1,7 @@
 {
-  "name": "alienwolfx-homepage",
-  "version": "0.2.0",
-  "description": "AlienWolfX website",
+  "name": "alienwolfX-homepage",
+  "version": "1.0.0",
+  "description": "My Portfolio",
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
     "build": "next build",
@@ -9,25 +9,20 @@
     "prettier": "prettier --write .",
     "lint": "next lint"
   },
-  "keywords": [
-    "nextjs",
-    "react",
-    "chakra-ui",
-    "threejs",
-    "framer-motion"
-  ],
-  "author": "Allen Cruiz",
+  "keywords": [],
+  "author": "Takuya Matsuyama",
   "license": "MIT",
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.1",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@vercel/analytics": "^1.1.1",
     "framer-motion": "^10.16.4",
-    "next": "^14.2.13",
+    "next": "^13.5.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.12.0",
-    "shadcn-ui": "^0.2.3",
+    "react-icons": "^4.11.0",
     "three": "^0.157.0"
   },
   "devDependencies": {
