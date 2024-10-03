@@ -1,28 +1,19 @@
 import {
     Container,
     Badge,
-    Link,
-    List,
-    ListItem,
-    SimpleGrid,
-    UnorderedList,
-    Heading,
     Center,
     Image,
     Table,
     Thead,
     Tbody,
-    Tfoot,
     Tr,
     Th,
     Td,
-    TableCaption,
     TableContainer,
   } from '@chakra-ui/react'
   import { FaCheck, FaXmark } from "react-icons/fa6";
   import Layout from '../../components/layouts/article'
-  import { ExternalLinkIcon } from '@chakra-ui/icons'
-  import { Title, WorkImage, Meta } from '../../components/work'
+  import { Title } from '../../components/work'
   import P from '../../components/paragraph'
   
   const Work = () => (
