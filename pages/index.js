@@ -51,7 +51,6 @@ import {
   SiVisualstudiocode,
   SiPostman,
   SiCanva,
-  SiVbDotNet
 } from 'react-icons/si'
 
 const Home = () => (
