@@ -2,6 +2,6 @@ module.exports = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['i.imgur.com', 'placehold.co'],
+    domains: ['i.imgur.com', 'placehold.jp'],
   },
 }

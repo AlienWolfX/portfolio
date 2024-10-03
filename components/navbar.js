@@ -18,6 +18,7 @@ import {
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 import { IoLogoGithub } from 'react-icons/io5'
+import ToggleMusic from './toggleMusic'
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
@@ -80,34 +81,40 @@ const Navbar = props => {
           <LinkItem href="/projects" path={path}>
             Projects
           </LinkItem>
-          <LinkItem href="/posts" path={path}>
-            Posts
+          <LinkItem href="/contact" path={path}>
+            Contact Me
           </LinkItem>
         </Stack>
-
         <Box flex={1} align="right">
-          <ThemeToggleButton />
+          <Flex gap={2} display={{ base: 'none', md: 'flex' }}>
+            <ToggleMusic />
+            <ThemeToggleButton />
+          </Flex>
 
-          <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
-            <Menu isLazy id="navbar-menu">
-              <MenuButton
-                as={IconButton}
-                icon={<HamburgerIcon />}
-                variant="outline"
-                aria-label="Options"
-              />
-              <MenuList>
-                <MenuItem as={MenuLink} href="/">
-                  About
-                </MenuItem>
-                <MenuItem as={MenuLink} href="/projects">
-                  Projects
-                </MenuItem>
-                <MenuItem as={MenuLink} href="/posts">
-                  Posts
-                </MenuItem>
-              </MenuList>
-            </Menu>
+          <Box ml={3} display={{ base: 'inline-block', md: 'none' }}>
+            <Flex align="center" gap={2}>
+              <ToggleMusic />
+              <ThemeToggleButton />
+              <Menu isLazy id="navbar-menu">
+                <MenuButton
+                  as={IconButton}
+                  icon={<HamburgerIcon />}
+                  variant="outline"
+                  aria-label="Options"
+                />
+                <MenuList>
+                  <MenuItem as={NextLink} href="/">
+                    About
+                  </MenuItem>
+                  <MenuItem as={NextLink} href="/projects">
+                    Projects
+                  </MenuItem>
+                  <MenuItem as={NextLink} href="/contact">
+                    Contact Me
+                  </MenuItem>
+                </MenuList>
+              </Menu>
+            </Flex>
           </Box>
         </Box>
       </Container>

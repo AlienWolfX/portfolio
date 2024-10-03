@@ -29,7 +29,7 @@ import {
     <Layout title="EcoSwap">
       <Container>
         <Title>
-          EcoSwap <Badge>2023</Badge>
+          ecoswap <Badge>2023</Badge>
         </Title>
         <Center my={6}>
           <Image width={200} height={200} src="https://i.imgur.com/JTwkLHQ.png" alt="icon" />

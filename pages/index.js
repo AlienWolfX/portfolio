@@ -13,19 +13,13 @@ import {
 } from '@chakra-ui/react'
 import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
-import {
-  SectionTitle,
-  SectionYear,
-  SectionDesc,
-  SectionContent
-} from '../components/background'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Image from 'next/image'
 import { certifications, workInfo, seminars } from '../components/details'
 import {
-  FaSquareXTwitter,
+  FaReddit,
   FaLinkedin,
   FaFacebookF,
   FaSquareInstagram
@@ -59,7 +53,6 @@ import {
   SiCanva,
   SiVbDotNet
 } from 'react-icons/si'
-import Head from 'next/head'
 
 const Home = () => (
   <Layout>
@@ -83,19 +76,19 @@ const Home = () => (
           <p>Security Researcher and Full Stack Web Developer</p>
           <br />
           <Box ml={2} display="flex" alignItems="center">
-            <Link href="https://twitter.com/yourprofile" isExternal>
-              <FaSquareXTwitter size="1.5em" />
+            <Link href="https://reddit.com/user/AlienWolfX05/" isExternal>
+              <FaReddit size="1.5em" />
             </Link>
-            <Link href="https://linkedin.com/in/yourprofile" isExternal ml={2}>
+            <Link href="https://linkedin.com/in/cruizallen" isExternal ml={2}>
               <FaLinkedin size="1.5em" />
             </Link>
-            <Link href="https://github.com/yourprofile" isExternal ml={2}>
+            <Link href="https://github.com/AlienWolfX" isExternal ml={2}>
               <FaGithub size="1.5em" />
             </Link>
-            <Link href="" isExternal ml={2}>
+            <Link href="https://facebook.com/cruizallen" isExternal ml={2}>
               <FaFacebookF size="1.5em" />
             </Link>
-            <Link href="" isExternal ml={2}>
+            <Link href="https://instagram.com/cruizallen" isExternal ml={2}>
               <FaSquareInstagram size="1.5em" />
             </Link>
           </Box>
@@ -108,20 +101,17 @@ const Home = () => (
           textAlign="center"
         >
           <Box
-            borderColor="whiteAlpha.800"
-            borderWidth={2}
             borderStyle="solid"
-            w="100px"
-            h="100px"
+            w={{ base: '150px', md: '200px' }}
+            h={{ base: '150px', md: '200px' }}
             display="inline-block"
-            borderRadius="full"
-            overflow="hidden"
           >
             <Image
               src="/images/cruiz.jpg"
               alt="Profile image"
-              width="100"
-              height="100"
+              width="200"
+              height="200"
+              borderRadius="full"
             />
           </Box>
         </Box>
@@ -134,10 +124,15 @@ const Home = () => (
           About me
         </Heading>
         <Paragraph>
-        I am currently a senior at Caraga State University, pursuing a Bachelor of Science in Information Technology. 
-        As an aspiring amateur Embedded Developer and Security Researcher, I am deeply passionate about my work. 
-        My primary focus is on Wi-Fi routers and Optical Router/Modem systems, where 
-        I specialize in creating customized firmware using OpenWrt as well as finding vulnerabilities.
+          I am currently a senior at
+          <Link href="https://www.carsu.edu.ph/" isExternal ml={2}>
+            Caraga State University
+          </Link>
+          , pursuing a Bachelor of Science in Information Technology. As an
+          aspiring amateur Embedded Developer and Security Researcher, I am
+          deeply passionate about my work. My primary focus is on Wi-Fi routers
+          and Optical Router/Modem systems, where I specialize in creating
+          customized firmware using OpenWrt as well as finding vulnerabilities.
         </Paragraph>
         <Box align="center" my={4}>
           <Button
@@ -170,23 +165,23 @@ const Home = () => (
         <Heading as="h3" variant="section-title">
           Work
         </Heading>
-          <BioSection>
-            <Box>
-              {workInfo.map((work, index) => (
-                <Box key={index}>
-                  <BioYear>{work.year}</BioYear>
-                    {work.title}
-                    <br />
-                    {work.desc}
-                </Box>
-              ))}
-            </Box>
-          </BioSection>
+        <BioSection>
+          <Box>
+            {workInfo.map((work, index) => (
+              <Box key={index}>
+                <BioYear>{work.year}</BioYear>
+                {work.title}
+                <br />
+                {work.desc}
+              </Box>
+            ))}
+          </Box>
+        </BioSection>
       </Section>
 
       <Section delay={0.4}>
         <Heading as="h3" variant="section-title">
-          Certifications
+          Certificates
         </Heading>
         <SimpleGrid columns={2} gap={6}>
           {certifications.map((cert, index) => (
@@ -197,7 +192,7 @@ const Home = () => (
           ))}
         </SimpleGrid>
       </Section>
-  
+
       <Section delay={0.5}>
         <Heading as="h3" variant="section-title">
           Seminars

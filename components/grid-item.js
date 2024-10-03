@@ -52,11 +52,7 @@ export const WorkGridItem = ({
         <Text mt={2} fontSize={20}>
           {title}
         </Text>
-        <List>
-            <ListItem>
-              <Meta>{children}</Meta>
-            </ListItem>
-          </List>
+        <Meta>{children}</Meta>
       </LinkOverlay>
     </LinkBox>
   </Box>
