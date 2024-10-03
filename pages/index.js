@@ -187,7 +187,7 @@ const Home = () => (
           {certifications.map((cert, index) => (
             <Box key={index}>
               <Paragraph>{cert.text}</Paragraph>
-              <Image src={cert.src} width={300} height={300} />
+              <Image alt={cert.text} src={cert.src} width={300} height={300} />
             </Box>
           ))}
         </SimpleGrid>
@@ -201,7 +201,7 @@ const Home = () => (
           {seminars.map((sem, index) => (
             <Box key={index}>
               <p>{sem.text}</p>
-              <Image src={sem.src} width={300} height={300} />
+              <Image alt={sem.text} src={sem.src} width={300} height={300} />
             </Box>
           ))}
         </SimpleGrid>
