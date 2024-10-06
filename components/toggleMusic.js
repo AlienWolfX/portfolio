@@ -9,14 +9,10 @@ const ToggleMusic = () => {
     const iconColor = useColorModeValue('black', 'white')
 
     useEffect(() => {
-        if (audioRef.current) {
-            audioRef.current.play()
-        }
-    }, [])
-
-    useEffect(() => {
         if (isPlaying) {
-            audioRef.current.play()
+            audioRef.current.play().catch(error => {
+                console.error('Error playing audio:', error)
+            })
         } else {
             audioRef.current.pause()
         }
@@ -28,7 +24,7 @@ const ToggleMusic = () => {
 
     return (
         <>
-            <audio ref={audioRef} src="/rsc/song.mp3" autoPlay />
+            <audio ref={audioRef} src="/rsc/song.mp3" />
             <AnimatePresence mode='wait' initial={false}>
                 <motion.div
                     key={isPlaying ? 'pause' : 'play'}

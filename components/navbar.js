@@ -76,8 +76,14 @@ const Navbar = props => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
+          <LinkItem href="/achievements" path={path}>
+            Achievements
+          </LinkItem>
+          <LinkItem href="/skills" path={path}>
+            Skills
+          </LinkItem>
           <LinkItem href="/projects" path={path}>
-            Projects
+            Projects  
           </LinkItem>
           <LinkItem href="/contact" path={path}>
             Contact Me
@@ -103,6 +109,12 @@ const Navbar = props => {
                 <MenuList>
                   <MenuItem as={NextLink} href="/">
                     About
+                  </MenuItem>
+                  <MenuItem as={NextLink} href="/achievements">
+                    Achievements
+                  </MenuItem>
+                  <MenuItem as={NextLink} href="/skills">
+                    Skills
                   </MenuItem>
                   <MenuItem as={NextLink} href="/projects">
                     Projects
